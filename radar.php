@@ -26,7 +26,7 @@ $user_set_array['alert_method'] = 'gmail'; $user_set_array['email_address'] = 'Y
 $user_set_array['db_name'] = 'adsb'; $user_set_array['db_host'] = '127.0.0.1'; $user_set_array['db_user'] = 'USERNAME'; $user_set_array['db_pass'] = 'PASSWORD';
 
 // set path to aircraft.json file
-$user_set_array['url_json'] = 'http://127.0.0.1/dump1090/data/';
+$user_set_array['url_json'] = 'http://127.0.0.1:8080/data/';
 
 // set path to your mailer.php file
 $user_set_array['url_mailer'] = 'http://YOUR_WEBSPACE.COM/mailer.php';
@@ -115,11 +115,11 @@ while (true) {
 	foreach ($json_data_array['aircraft'] as $row) {
 		isset($row['hex']) ? $ac_hex = $row['hex'] : $ac_hex = '';
 		isset($row['flight']) ? $ac_flight = trim($row['flight']) : $ac_flight = '';
-		isset($row['altitude']) ? $ac_altitude = $row['altitude'] : $ac_altitude = '';
+		isset($row['nav_altitude']) ? $ac_altitude = $row['navaltitude'] : $ac_altitude = '';
 		isset($row['lat']) ? $ac_lat = $row['lat'] : $ac_lat = '';
 		isset($row['lon']) ? $ac_lon = $row['lon'] : $ac_lon = '';
 		isset($row['track']) ? $ac_track = $row['track'] : $ac_track = '';
-		isset($row['speed']) ? $ac_speed = $row['speed'] : $ac_speed = '';
+		isset($row['gs']) ? $ac_speed = $row['gs'] : $ac_speed = '';
 		isset($row['vert_rate']) ? $ac_vert_rate = $row['vert_rate'] : $ac_vert_rate = '';
 		isset($row['seen_pos']) ? $ac_seen_pos = $row['seen_pos'] : $ac_seen_pos = '';
 		isset($row['seen']) ? $ac_seen = $row['seen'] : $ac_seen = '';
